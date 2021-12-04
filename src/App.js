@@ -28,7 +28,7 @@ class App extends Component {
     height: window.innerHeight,
     numRows: initialNumRows,
     numColumns: initialNumColumns,
-    speed: 0.9,
+    speed: 5,
   };
 
   updateDimensions = () => {
@@ -94,7 +94,7 @@ class App extends Component {
       setTimeout(() => {
         //checked point
         document.getElementById(`point-${point.row}-${point.col}`).className =
-            "point point-visited";
+            "point point-checked";
       }, i * this.state.speed);
     }
   };

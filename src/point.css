@@ -17,6 +17,38 @@
     background-color: red;
 }
 
+.point-checked {
+    animation-name: checkedAnimation;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+@keyframes checkedAnimation {
+    0% {
+        transform: scale(0.3);
+        background-color: rgb(255, 0, 255);
+        border-radius: 100%;
+    }
+
+    50% {
+        transform: scale(0.5);
+        background-color: rgba(10, 55, 95, 0.75);
+        border-radius: 75%;
+    }
+
+    75% {
+        transform: scale(0.7);
+        background-color: rgba(20, 110, 140, 0.75);
+        border-radius: 50%;
+    }
+
+    100% {
+        transform: scale(1);
+        background-color: rgba(30, 165, 185, 0.75);
+    }
+}
+
 .point-shortest-path {
     animation-name: shortestPathAnimation;
     animation-duration: 0.5s;
