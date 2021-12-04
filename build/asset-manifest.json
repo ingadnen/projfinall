@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/ingadnen/projfinall.git/static/css/main.1d90f083.chunk.css",
+    "main.js": "/ingadnen/projfinall.git/static/js/main.f6135e66.chunk.js",
+    "main.js.map": "/ingadnen/projfinall.git/static/js/main.f6135e66.chunk.js.map",
+    "runtime-main.js": "/ingadnen/projfinall.git/static/js/runtime-main.af39f8d6.js",
+    "runtime-main.js.map": "/ingadnen/projfinall.git/static/js/runtime-main.af39f8d6.js.map",
+    "static/css/2.cc0adf6c.chunk.css": "/ingadnen/projfinall.git/static/css/2.cc0adf6c.chunk.css",
+    "static/js/2.c3fba672.chunk.js": "/ingadnen/projfinall.git/static/js/2.c3fba672.chunk.js",
+    "static/js/2.c3fba672.chunk.js.map": "/ingadnen/projfinall.git/static/js/2.c3fba672.chunk.js.map",
+    "index.html": "/ingadnen/projfinall.git/index.html",
+    "precache-manifest.c24a3a75bb63624a4da870c4811f949c.js": "/ingadnen/projfinall.git/precache-manifest.c24a3a75bb63624a4da870c4811f949c.js",
+    "service-worker.js": "/ingadnen/projfinall.git/service-worker.js",
+    "static/css/2.cc0adf6c.chunk.css.map": "/ingadnen/projfinall.git/static/css/2.cc0adf6c.chunk.css.map",
+    "static/css/main.1d90f083.chunk.css.map": "/ingadnen/projfinall.git/static/css/main.1d90f083.chunk.css.map",
+    "static/js/2.c3fba672.chunk.js.LICENSE.txt": "/ingadnen/projfinall.git/static/js/2.c3fba672.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.af39f8d6.js",
+    "static/css/2.cc0adf6c.chunk.css",
+    "static/js/2.c3fba672.chunk.js",
+    "static/css/main.1d90f083.chunk.css",
+    "static/js/main.f6135e66.chunk.js"
+  ]
+}

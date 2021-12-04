@@ -1,0 +1,50 @@
+
+.point {
+    width: var(--width);
+    height: var(--height);
+    border: 1px solid rgb(175, 216, 248);
+    border-radius: 12px;
+
+    display: inline-block;
+}
+
+
+.point-start {
+    background-color: green;
+}
+
+.point-end {
+    background-color: red;
+}
+
+.point-shortest-path {
+    animation-name: shortestPathAnimation;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+@keyframes shortestPathAnimation {
+    0% {
+        transform: scale(0.3);
+        background-color: rgba(255, 0, 255, 0.75);
+        border-radius: 100%;
+    }
+
+    50% {
+        transform: scale(0.5);
+        background-color: rgba(255, 0, 255, 0.75);
+        border-radius: 75%;
+    }
+
+    75% {
+        transform: scale(0.7);
+        background-color: rgba(255, 0, 255, 0.75);
+        border-radius: 50%;
+    }
+
+    100% {
+        transform: scale(1);
+        background-color: rgba(255, 0, 255, 0.75);
+    }
+}
