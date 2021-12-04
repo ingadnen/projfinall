@@ -13,8 +13,12 @@ class Point extends Component {
             col,
             isStart,
             isEnd,
+            isRoadblock,
             isChecked,
             isShortest,
+            onMouseEnter,
+            onMouseDown,
+            onMouseUp,
             width,
             height,
             numRows,
@@ -25,6 +29,8 @@ class Point extends Component {
             ? "point point-start"
             : isEnd
                 ? "point point-end"
+                : isRoadblock
+                    ? "point-roadblock"
                     : isShortest
                         ? "point point-shortest-path"
                         : isChecked
@@ -48,6 +54,9 @@ class Point extends Component {
                 id={`point-${row}-${col}`}
                 className={`${extraClass}`}
                 style={{ "--width": `${cercleWidth}px`, "--height": `${cercleHeight}px` }}
+                onMouseEnter={() => onMouseEnter(row, col)}
+                onMouseDown={() => onMouseDown(row, col)}
+                onMouseUp={() => onMouseUp()}
             ></div>
         );
     }

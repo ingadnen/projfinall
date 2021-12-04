@@ -8,6 +8,7 @@ export function dijkstra(grid, startPoint, endPoint) {
     while (uncheckedPoints.length !== 0) {
         uncheckedPoints.sort((a, b) => a.distance - b.distance);
         let nearestPoint = uncheckedPoints.shift();
+        if (nearestPoint.isRoadblock) continue;
         if (nearestPoint.distance === Infinity) return checkedPointsInOrder;
         if (nearestPoint === endPoint) return checkedPointsInOrder;
         nearestPoint.isChecked = true;
@@ -42,6 +43,7 @@ function getUncheckedNeighbours(point, grid) {
     if (row !== grid.length - 1) neighbours.push(grid[row + 1][col]);
     if (col !== 0) neighbours.push(grid[row][col - 1]);
     return neighbours
+        .filter((neighbour) => !neighbour.isRoadblock)
         .filter((neighbour) => !neighbour.isChecked);
 }
 

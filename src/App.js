@@ -44,6 +44,21 @@ class App extends Component {
   }
 
 
+  handleMouseDown(row, col) {
+    const newGrid = getNewGridWithRoadblocks(this.state.grid, row, col);
+    this.setState({ grid: newGrid, mouseIsPressed: true });
+  }
+
+  handleMouseEnter(row, col) {
+    if (this.state.mouseIsPressed) {
+      const newGrid = getNewGridWithRoadblocks(this.state.grid, row, col);
+      this.setState({ grid: newGrid, mouseIsPressed: true });
+    }
+  }
+
+  handleMouseUp() {
+    this.setState({ mouseIsPressed: false });
+  }
   animateShortestPath = (pointsInShortestPathOrder, checkedPointsInOrder) => {
     if (pointsInShortestPathOrder.length === 1)
       this.setState({ visualizingAlgorithm: false });
@@ -143,6 +158,7 @@ class App extends Component {
                         col,
                         isStart,
                         isEnd,
+                        isRoadblock,
                         isChecked,
                         isShortest,
                       } = point;
@@ -153,6 +169,12 @@ class App extends Component {
                               col={col}
                               isStart={isStart}
                               isEnd={isEnd}
+                              isRoadblock={isRoadblock}
+                              onMouseDown={(row, col) => this.handleMouseDown(row, col)}
+                              onMouseEnter={(row, col) =>
+                                  this.handleMouseEnter(row, col)
+                              }
+                              onMouseUp={() => this.handleMouseUp()}
                               isChecked={isChecked}
                               isShortest={isShortest}
                               width={this.state.width}
@@ -268,8 +290,20 @@ const createPoint = (row, col) => {
     totalDistance: Infinity,
     isChecked: false,
     isShortest: false,
+    isRoadblock: false,
     previousPoint: null,
   };
+};
+
+const getNewGridWithRoadblocks = (grid, row, col) => {
+  let newGrid = grid.slice();
+  let point = grid[row][col];
+  let newPoint = {
+    ...point,
+    isRoadblock: !point.isRoadblock,
+  };
+  newGrid[row][col] = newPoint;
+  return newGrid;
 };
 
 const updatePointsForRender = (
